@@ -1,0 +1,5 @@
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.Common\bin\Release\NAGGLE.Common.dll
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.Common\bin\Release\NAGGLE.Common.pdb
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.Common\obj\Release\NAGGLE.Common.csprojResolveAssemblyReference.cache
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.Common\obj\Release\NAGGLE.Common.dll
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.Common\obj\Release\NAGGLE.Common.pdb

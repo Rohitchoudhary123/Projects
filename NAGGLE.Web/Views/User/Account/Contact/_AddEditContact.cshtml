@@ -1,0 +1,105 @@
+﻿<div class="page-content-inner">
+    <form name="AddEditContactForm">
+        <div class="form-title">
+            Add New Contact
+        </div>
+        <div class="main-form">
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="global-form-group">
+                        <select class="form-control" ng-options="account.AccountId as account.BusinessName for account in Accounts" ng-model="Contact.AccountId" name="Account" required-error-message="Required" validator="required">
+                            <option value="">Select Account</option>
+                        </select>
+                        <i class="fa fa-building-o form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" placeholder="First Name" ng-model="Contact.FirstName" maxlength="20" name="FirstName" required-error-message="Required" validator="required">
+                        <i class="fa fa-user form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" placeholder="Last Name" ng-model="Contact.LastName" maxlength="20" name="LastName">
+                        <i class="fa fa-user form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" placeholder="Mobile" ng-model="Contact.PhoneNumber" maxlength="12" name="MobileNumber" >
+                        <i class="fa fa-mobile form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" placeholder="Phone" maxlength="12" ng-model="Contact.Telephone">
+                        <i class="fa fa-phone form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" placeholder="Email" ng-model="Contact.Email" maxlength="50" name="Email" required-error-message="Required" validator="required,email">
+                        <i class="fa fa-envelope-o form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" placeholder="Designation" ng-model="Contact.Designation" maxlength="50" name="Designation">
+                        <i class="fa fa-user form-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="global-form-group">
+                <textarea class="form-control" placeholder="Address" ng-model="Contact.AddressLine1" maxlength="50" name="AddressLine1"></textarea>
+                <i class="fa fa-align-left form-icon"></i>
+            </div>
+            <div class="double-form">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 right-padding">
+                        <select class="form-control" id="Country" name="Country" placeholder="Country" ng-options="country as country.Name for country in Countries track by country.CountryId" ng-model="Contact.CountryType" ng-change="getStates(Contact.CountryType)" >
+                            <option value="">Select Country</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 border-left left-padding">
+                        <input type="text" class="form-control" placeholder="Zip Code" maxlength="12" ng-model="Contact.PostalCode">
+                    </div>
+                </div>
+                <i class="fa fa-map-marker form-icon"></i>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-if="Contact.CountryType.Code=='US'">
+                    <div class="global-form-group">
+                        <select class="form-control" name="State" placeholder="State" ng-options="state.StateId as state.Name for state in States" ng-model="Contact.StateId">
+                            <option value="">Select State</option>
+                        </select>
+                        <i class="fa fa-fort-awesome form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Contact.City" maxlength="15" name="City" placeholder="City">
+                        <i class="fa fa-hospital-o form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" placeholder="Fax" maxlength="12" ng-model="Contact.FaxNumber">
+                        <i class="fa fa-fax form-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-form">
+            <div class="pull-left">
+                <button ng-click="save(Contact,$event)" validation-submit="AddEditContactForm" data-style="expand-right" data-size="s" class="btn btn-green ladda-button btn-md">
+                    Save
+                </button>
+                <a href="javascript:void(0)" ng-click="cancel()" class="btn btn-gray btn-md">
+                    Cancel
+                </a>
+            </div>
+        </div>
+    </form>
+</div>

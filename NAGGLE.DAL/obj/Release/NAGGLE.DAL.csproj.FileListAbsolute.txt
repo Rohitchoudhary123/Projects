@@ -1,0 +1,14 @@
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\NAGGLE.DAL.dll.config
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\NAGGLE.DAL.dll
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\NAGGLE.DAL.pdb
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\EntityFramework.dll
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\EntityFramework.SqlServer.dll
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\Microsoft.AspNet.Identity.Core.dll
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\EntityFramework.xml
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\EntityFramework.SqlServer.xml
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\Microsoft.AspNet.Identity.Core.xml
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\obj\Release\NAGGLE.DAL.csprojResolveAssemblyReference.cache
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\obj\Release\NAGGLE.DAL.dll
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.DAL\obj\Release\NAGGLE.DAL.pdb

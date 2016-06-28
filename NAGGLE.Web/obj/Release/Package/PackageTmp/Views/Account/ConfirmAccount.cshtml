@@ -1,0 +1,52 @@
+﻿@model NAGGLE.Web.Models.ResetPasswordViewModel
+@{
+    ViewBag.Title = "Account Confirmation";
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+@using (Html.BeginForm("SetPassword", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="wrapper ">
+        <div class="login-body">
+            <div class="container">
+                <div class="login-form">
+                    <div class="login-title">Set Password</div>
+                    <div class="form-group">
+                        <div class="input-group">
+
+                            <span class="input-group-addon"><i class="fa fa-user icolor"></i></span>
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key icolor"></i></span>
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+
+                        </div>@Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                    <input type="submit" class="btn btn-theme btn-sm pull-right" value="Save" />
+                    <div class="form-group">
+                        @Html.ValidationMessage("Error", new { @class = "text-danger" })
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.HiddenFor(m => m.UserId, new { @Value = ViewBag.UserId })
+}
+
+@if (@ViewBag.Alert == true)
+{
+    <script type="text/javascript">
+    $(document).ready(function (e) {
+        bootbox.alert("Your password has been saved. You can now log in using your email address and password", function () {
+            var url = '@Url.Action("Login", "Account")';
+            window.location.href = url;
+        });
+
+    });
+    </script>
+}

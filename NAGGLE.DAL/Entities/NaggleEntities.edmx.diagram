@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3d838b45357646ccadb982a93a0568a1" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="NaggleModel.AccountAccountType" Width="1.5" PointX="2.3239256545547051" PointY="16.408078752648123" />
+        <EntityTypeShape EntityType="NaggleModel.AccountCategory" Width="1.5" PointX="4.9833369613547518" PointY="31.004364341033792" />
+        <EntityTypeShape EntityType="NaggleModel.AccountCompany" Width="1.5" PointX="4.1452858448705108" PointY="8.6718092154114554" />
+        <EntityTypeShape EntityType="NaggleModel.AccountType" Width="1.5" PointX="11.66780628434746" PointY="12.758691659550504" />
+        <EntityTypeShape EntityType="NaggleModel.Company" Width="1.5" PointX="6.9931017993917228" PointY="26.990233866027666" IsExpanded="false" />
+        <EntityTypeShape EntityType="NaggleModel.Country" Width="1.5" PointX="9.4761709615011576" PointY="30.319522871784642" />
+        <EntityTypeShape EntityType="NaggleModel.Role" Width="1.5" PointX="9.64468464890713" PointY="14.850993595482313" IsExpanded="false" />
+        <AssociationConnector Association="NaggleModel.FK_AccountAccountType_AccountType" />
+        <AssociationConnector Association="NaggleModel.FK_AccountCompany_Company" />
+        <AssociationConnector Association="NaggleModel.FK_Role_Company" />
+        <EntityTypeShape EntityType="NaggleModel.State" Width="1.5" PointX="11.258953414512311" PointY="18.542304509571895" />
+        <AssociationConnector Association="NaggleModel.FK_State_Country" />
+        <EntityTypeShape EntityType="NaggleModel.AccountContact" Width="1.5" PointX="5.4078826091288974" PointY="4.3268994113089976" IsExpanded="false" />
+        <EntityTypeShape EntityType="NaggleModel.User" Width="1.5" PointX="7.0817517969206687" PointY="8.4916813413108141" />
+        <AssociationConnector Association="NaggleModel.FK_AccountContact_User" />
+        <AssociationConnector Association="NaggleModel.FK_Company_User" />
+        <AssociationConnector Association="NaggleModel.FK_User_Company" />
+        <AssociationConnector Association="NaggleModel.FK_User_Country" />
+        <AssociationConnector Association="NaggleModel.FK_User_Country1" />
+        <AssociationConnector Association="NaggleModel.FK_User_User" />
+        <AssociationConnector Association="NaggleModel.FK_User_User1" />
+        <EntityTypeShape EntityType="NaggleModel.Account" Width="1.5" PointX="3.184763444207964" PointY="29.628002344457435" />
+        <AssociationConnector Association="NaggleModel.FK_Account_User" />
+        <AssociationConnector Association="NaggleModel.FK_AccountAccountType_Account" />
+        <AssociationConnector Association="NaggleModel.FK_AccountCategory_Account" />
+        <AssociationConnector Association="NaggleModel.FK_AccountCompany_Account" />
+        <AssociationConnector Association="NaggleModel.FK_AccountContact_Account" />
+        <AssociationConnector Association="NaggleModel.FK_User_State" />
+        <EntityTypeShape EntityType="NaggleModel.AttributeCategory" Width="1.5" PointX="0.94649351432290563" PointY="8.622536603651259" />
+        <EntityTypeShape EntityType="NaggleModel.FeatureType" Width="1.5" PointX="6.6062866349733849" PointY="0.52185247862797812" IsExpanded="false" />
+        <EntityTypeShape EntityType="NaggleModel.Attribute" Width="1.5" PointX="3.6753873730429389" PointY="17.819307320667107" />
+        <AssociationConnector Association="NaggleModel.FK_Attribute_FeatureType" />
+        <AssociationConnector Association="NaggleModel.FK_AttributeCategory_AttributeCategory" />
+        <EntityTypeShape EntityType="NaggleModel.Category" Width="1.5" PointX="0.75" PointY="19.375" />
+        <AssociationConnector Association="NaggleModel.FK_AccountCategory_Category" />
+        <AssociationConnector Association="NaggleModel.FK_AttributeCategory_Category" />
+        <EntityTypeShape EntityType="NaggleModel.Availability" Width="1.5" PointX="3.2565750308598274" PointY="26.25063390762109" />
+        <EntityTypeShape EntityType="NaggleModel.Division" Width="1.5" PointX="11.310464573702991" PointY="25.833171036948062" />
+        <EntityTypeShape EntityType="NaggleModel.ProductAccountPrice" Width="1.5" PointX="2.0367226926780879" PointY="0.78111632204666559" />
+        <EntityTypeShape EntityType="NaggleModel.ProductAttribute" Width="1.5" PointX="5.4065709698044557" PointY="8.18483601891661" />
+        <EntityTypeShape EntityType="NaggleModel.ProductAvailability" Width="1.5" PointX="2.0963481879310439" PointY="14.505077890355642" />
+        <EntityTypeShape EntityType="NaggleModel.ProductClass" Width="1.5" PointX="9.0476916474512272" PointY="0.916266769597431" />
+        <EntityTypeShape EntityType="NaggleModel.ProductPricing" Width="1.5" PointX="6.6429565114169185" PointY="31.140793010192361" />
+        <AssociationConnector Association="NaggleModel.FK_ProductAccountPrice_Account" />
+        <AssociationConnector Association="NaggleModel.FK_ProductAttribute_Attribute" />
+        <AssociationConnector Association="NaggleModel.FK_ProductAvailability_Availability" />
+        <EntityTypeShape EntityType="NaggleModel.Product" Width="1.5" PointX="11.285355263988187" PointY="0.63034720748213457" />
+        <AssociationConnector Association="NaggleModel.FK_Product_ProductClass" />
+        <AssociationConnector Association="NaggleModel.FK_ProductAccountPrice_Product" />
+        <AssociationConnector Association="NaggleModel.FK_ProductAttribute_Product" />
+        <AssociationConnector Association="NaggleModel.FK_ProductAvailability_Product" />
+        <AssociationConnector Association="NaggleModel.FK_ProductPricing_Product" />
+        <EntityTypeShape EntityType="NaggleModel.ProductCategory" Width="1.5" PointX="9.0523676877153889" PointY="2.4157717239185104" />
+        <AssociationConnector Association="NaggleModel.FK_ProductCategory_Category" />
+        <AssociationConnector Association="NaggleModel.FK_ProductCategory_Product" />
+        <EntityTypeShape EntityType="NaggleModel.ProductDivision" Width="1.5" PointX="6.1595530389619775" PointY="22.088664780412177" />
+        <AssociationConnector Association="NaggleModel.FK_ProductDivision_Division" />
+        <AssociationConnector Association="NaggleModel.FK_ProductDivision_Product" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,192 @@
+﻿<div class="page-content-inner">
+    <form name="AddEditAccountForm">
+        <div class="form-title">
+            Add New Account
+        </div>
+        <div class="form-sub-title">
+            <span>General</span>
+        </div>
+
+        <div class="main-form">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Account.BusinessName" name="BusinessName" placeholder="Business Name" required-error-message="Required" validator="required">
+                        <i class="fa fa-building-o form-icon"></i>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Account.Email" ng-show="IsReadOnlyEmail" readonly="true" placeholder="Email" name="Email">
+                        <input type="text" class="form-control" ng-model="Account.Email" ng-hide="IsReadOnlyEmail" placeholder="Email" name="Email" required-error-message="Required" validator="required,email">
+                        <i class="fa fa-envelope-o form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Account.FirstName" placeholder="First Name" name="Firstname" required-error-message="Required" validator="required">
+                        <i class="fa fa-user form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Account.LastName" placeholder="Last Name" name="Lastname" required-error-message="Required" validator="required">
+                        <i class="fa fa-user form-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="global-form-group">
+                <textarea class="form-control" ng-model="Account.Address" placeholder="Address" name="Address"></textarea>
+                <i class="fa fa-align-left form-icon"></i>
+            </div>
+            <div class="double-form">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 right-padding">
+                        <select class="form-control" id="Country" name="Country" placeholder="Country" ng-options="country as country.Name for country in Countries track by country.CountryId" ng-model="Account.CountryType" ng-change="getStates(Account.CountryType)">
+                            <option value="">Country</option>
+                        </select>
+                        @* <select class="form-control" id="select-1">
+                                <option>Select Country</option>
+                                <option value="1">Country 1</option>
+                                <option value="2">Country 2</option>
+                                <option value="3">Country 3</option>
+                                <option value="4">Country 4</option>
+                                <option value="5">Country 5</option>
+                            </select>*@
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 border-left left-padding">
+                        <input type="text" class="form-control" ng-model="Account.PostalCode" placeholder="Zip Code" name="PostalCode">
+                    </div>
+                </div>
+                <i class="fa fa-map-marker form-icon"></i>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-if="Account.CountryType.Code=='US'">
+                    <div class="global-form-group">
+                        <select class="form-control" name="State" placeholder="State" ng-options="state.StateId as state.Name for state in States" ng-model="Account.StateId">
+                            <option value="">State</option>
+                        </select>
+                        @*  <select class="form-control" id="select-1">
+                                <option>Select State</option>
+                                <option value="1">State 1</option>
+                                <option value="2">State 2</option>
+                                <option value="3">State 3</option>
+                                <option value="4">State 4</option>
+                                <option value="5">State 5</option>
+                            </select>*@
+                        <i class="fa fa-fort-awesome form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Account.City" placeholder="City">
+                        @*<select class="form-control" id="select-1">
+                                <option>Select City</option>
+                                <option value="1">City 1</option>
+                                <option value="2">City 2</option>
+                                <option value="3">City 3</option>
+                                <option value="4">City 4</option>
+                                <option value="5">City 5</option>
+                            </select>*@
+                        <i class="fa fa-hospital-o form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Account.WebSite" name="WebSite" placeholder="Website">
+                        <i class="fa fa-globe form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Account.PhoneNumber" placeholder="Phone">
+                        <i class="fa fa-phone form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Account.FaxNumber" placeholder="Fax">
+                        <i class="fa fa-fax form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Account.MobileNumber" placeholder="Mobile" name="Mobile">
+                        <i class="fa fa-mobile form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-if="Account.CountryType.Code!='US'">
+                    <div class="global-form-group">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <select class="form-control " multiple="multiple" multiselect-dropdown="AccountTypes" data-ng-model="SelectedAccountTypes" data-ng-options="i.AccountTypeId as i.Name for i in AccountTypes" id="AccountType" name="AccountType" defaultname="Account Types">
+                            <option value="" ng-if="false"></option>
+                        </select>
+                        <i class="fa fa-user form-icon"></i>
+                    </div>
+                </div>
+                @*<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" id="AssignCategorieTree" readonly="readonly" ishideparentcheckbox="false" placeholder="Categories" data-includecheckbox="true" data-isint="true" data-ngmodel="SelectedAssignCategories" data-model="SelectedAssignCategories" data-controller="userAccountController" ca-multiselect-treeview-autocomplete="Categories" name="AssignCategorieTree"
+                               class="input_width no-blink-cursor addcursor form-control" />
+                        <i class="fa fa-gears form-icon"></i>
+                    </div>
+                </div>*@
+            </div>
+            <div class="form-sub-title">
+                <span>Categories</span>
+            </div>
+            <div class="main-form">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="global-form-group">
+                            <div id="AssignCategorieTree" readonly="readonly" ishideparentcheckbox="false" data-displayscope="SelectedAssignCategorieName" placeholder="Categories" data-includecheckbox="true" data-isint="true" data-ngmodel="SelectedAssignCategories" data-model="SelectedAssignCategories" data-controller="userAccountController" ca-multiselect-treeview-autocomplete="Categories" name="AssignCategorieTree"
+                                   class="input_width no-blink-cursor addcursor form-control" >
+                                </div>
+                            <i class="fa fa-gears form-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="categories-list-new">
+                            <div class="list-button" ng-repeat="CategorieName in SelectedAssignCategorieName" ng-click="RemoveAssignCategorie(CategorieName.Id)">{{CategorieName.Name}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="global-form-group">
+                <textarea class="form-control" ng-model="Account.Description" placeholder="Description" name="Description"></textarea>
+                <i class="fa fa-align-left form-icon"></i>
+            </div>
+        </div>
+
+        <div class="form-sub-title" style="display: none">
+            <span>Contacts</span>
+            <div class="pull-right right-action-buttons">
+                <a data-toggle="modal" data-target="#add-contact" class="btn btn-blue btn-sm" title="Add New Product">
+                    Add Contact
+                </a>
+            </div>
+        </div>
+
+        <div class="main-form">
+            <div class="pull-left">
+                <button ng-if="ShowSaveButton" ng-click="addEditAccount(Account,$event)" data-style="expand-right" data-size="s" validation-submit="AddEditAccountForm" class="btn btn-green btn-md ladda-button">
+                    Save
+                </button>
+                <button ng-if="!ShowSaveButton" ng-click="addEditAccount(Account,$event)" data-style="expand-right" data-size="s" validation-submit="AddEditAccountForm" class="btn btn-green btn-md ladda-button">
+                    Update
+                </button>
+                <a href="javascript:void(0)" ng-click="Cancel()" class="btn btn-gray btn-md">
+                    Cancel
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="clearfix"></div>

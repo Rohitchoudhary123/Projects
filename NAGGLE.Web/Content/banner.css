@@ -1,0 +1,562 @@
+/* Home Slider - Revolution Slider */
+.slider-container {
+	background: #171717;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	z-index: 1;
+}
+
+.slider-container .btn-banner{
+	background: transparent;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #fff;
+	border-radius: 0px;
+	border: 2px solid #50b7e9;
+}
+
+.slider-container .btn-banner:hover,
+.slider-container .btn-banner:focus,
+.slider-container .btn-banner:active{
+	background: #50b7e9;
+}
+
+.slider-container ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.slider-container .tp-bannershadow {
+	filter: alpha(opacity=20);
+	opacity: 0.20;
+}
+
+.slider-container .top-label {
+	color: #50b7e9;
+	font-size: 46px;
+	line-height: 60px;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Britannic-Bold';
+}
+
+.slider-container .main-label {
+	color: #FFF;
+	font-family: 'Britannic-Bold';
+	font-size: 40px;
+	line-height: 50px;
+	text-align: center;
+	font-weight: 800;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.slider-container .bottom-label {
+	color: #FFF;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.slider-container .blackboard-text {
+	color: #50b7e8;
+	font-size: 32px;
+	line-height: 46px;
+	font-family: "Shadows Into Light", cursive;
+}
+
+.slider-container .tp-caption {
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+.slider-container .tp-caption a {
+	color: #FFF;
+}
+
+.slider-container .tp-caption a:hover {
+	color: #FFF;
+}
+
+.slider-container .tp-caption.fullscreenvideo {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 0 !important;
+}
+
+.slider-container .tp-caption.fullscreenvideo video {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	position: relative;
+}
+
+.slider-container.light {
+	background-color: #EAEAEA;
+}
+
+.slider-container.light .tp-bannershadow {
+	filter: alpha(opacity=5);
+	opacity: 0.05;
+	top: 0;
+	bottom: auto;
+	z-index: 1000;
+}
+
+.slider-container.light .top-label, .slider-container.light .main-label, .slider-container.light .bottom-label {
+	color: #333;
+}
+
+.slider-container.light .tp-caption a {
+	color: #333;
+}
+
+.slider-container.light .tp-caption a:hover {
+	color: #333;
+}
+
+.slider {
+	height: 500px;
+	max-height: 500px;
+	position: relative;
+}
+
+.slider .tp-bannertimer {
+	display: none;
+}
+
+.slider .main-button {
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 20px;
+}
+
+.slider-container-fullscreen {
+	height: 2000px;
+	max-height: none;
+}
+
+.slider-container-fullscreen .slider {
+	max-height: none;
+}
+
+
+/*********************************
+	-	SPECIAL TP CAPTIONS -
+**********************************/
+.tp-caption .frontcorner {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 0px solid transparent;
+    border-top: 40px solid #00A8FF;
+    position: absolute;
+    left: -40px;
+    top: 0px;
+}
+.tp-caption .backcorner {
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid #00A8FF;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.tp-caption .frontcornertop {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 40px solid #00A8FF;
+    position: absolute;
+    left: -40px;
+    top: 0px;
+}
+.tp-caption .backcornertop {
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 40px solid #00A8FF;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+
+/**********************************************
+	-	FULLSCREEN AND FULLWIDHT CONTAINERS	-
+**********************************************/
+
+.fullscreen-container {
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
+.fullwidthbanner-container {
+    width: 100%;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+}
+.fullwidthbanner-container .fullwidthbanner {
+    width: 100%;
+    position: relative;
+}
+
+
+/************************************************
+	  - SOME CAPTION MODIFICATION AT START  -
+*************************************************/
+.tp-simpleresponsive .caption,
+.tp-simpleresponsive .tp-caption {
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";		-moz-opacity: 0;	-khtml-opacity: 0;	opacity: 0; */    
+    position: absolute;
+    visibility: hidden;
+    -webkit-font-smoothing: antialiased !important;
+}
+.tp-simpleresponsive img {
+    max-width: none;
+}
+
+/******************************
+	-	IE8 HACKS	-
+*******************************/
+.noFilterClass {
+	filter:none !important;
+}
+
+
+/************************
+	-	NAVIGATION	-
+*************************/
+
+/** BULLETS **/
+
+.tpclear {
+    clear: both;
+}
+.tp-bullets {
+    z-index: 1000;
+    position: absolute;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    -ms-transition: opacity 0.2s ease-out;
+    -webkit-transform: translateZ(5px);
+}
+.tp-bullets.hidebullets {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+
+.tp-bullets.simplebullets.round .bullet {
+    cursor: pointer;
+    position: relative;
+    background: url(../images/banner-images/bullet.png) no-Repeat top left;
+    width: 20px;
+    height: 20px;
+    margin-right: 0px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 3px;
+}
+.tp-bullets.simplebullets.round .bullet.last {
+    margin-right: 3px;
+}
+
+.tp-bullets.simplebullets .bullet:hover,
+.tp-bullets.simplebullets .bullet.selected {
+    background-position: top left;
+}
+.tp-bullets.simplebullets.round .bullet:hover,
+.tp-bullets.simplebullets.round .bullet.selected,
+.tp-bullets.simplebullets.navbar .bullet:hover,
+.tp-bullets.simplebullets.navbar .bullet.selected {
+    background-position: bottom left;
+}
+
+
+
+/*************************************
+	-	TP ARROWS 	-
+**************************************/
+
+.tparrows {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    -ms-transition: opacity 0.2s ease-out;
+    -webkit-transform: translateZ(5000px);
+    -webkit-transform-style: flat;
+    -webkit-backface-visibility: hidden;
+    z-index: 600;
+    position: relative;
+}
+.tparrows.hidearrows {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+.tp-leftarrow {
+    z-index: 100;
+    cursor: pointer;
+    position: relative;
+    background: url(../images/banner-images/large_left.png) no-Repeat top left;
+    width: 40px;
+    height: 40px;
+}
+.tp-rightarrow {
+    z-index: 100;
+    cursor: pointer;
+    position: relative;
+    background: url(../images/banner-images/large_right.png) no-Repeat top left;
+    width: 40px;
+    height: 40px;
+}
+
+.tp-leftarrow:hover,
+.tp-rightarrow:hover {
+    background-position: bottom left;
+}
+
+
+
+/***************************************
+	-	RESPONSIVE SETTINGS 	-
+****************************************/
+
+
+@media only screen and (min-width: 0px) and (max-width: 479px) {
+    .responsive .tp-bullets {
+        display: none
+    }
+    .responsive .tparrows {
+        display: none;
+    }
+}
+
+
+
+/*********************************************
+
+	-	BASIC SETTINGS FOR THE BANNER	-
+
+***********************************************/
+.tp-simpleresponsive img {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+.tp-simpleresponsive a {
+    text-decoration: none;
+}
+.tp-simpleresponsive ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tp-simpleresponsive >ul >li {
+    list-stye: none;
+    position: absolute;
+    visibility: hidden;
+}
+/*  CAPTION SLIDELINK   **/
+
+/******************************
+	-	LOADER FORMS	-
+********************************/
+
+@-webkit-keyframes tp-rotateplane {
+    0% {
+        -webkit-transform: perspective(120px)
+    }
+    50% {
+        -webkit-transform: perspective(120px) rotateY(180deg)
+    }
+    100% {
+        -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+    }
+}
+@keyframes tp-rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    }
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    }
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+.tp-loader.spinner2 {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    background-color: #ff0000;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 100%;
+    -webkit-animation: tp-scaleout 1.0s infinite ease-in-out;
+    animation: tp-scaleout 1.0s infinite ease-in-out;
+}
+@-webkit-keyframes tp-scaleout {
+    0% {
+        -webkit-transform: scale(0.0)
+    }
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+@keyframes tp-scaleout {
+    0% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+.tp-loader.spinner3 {
+    margin: -9px 0px 0px -35px;
+    width: 70px;
+    text-align: center;
+}
+.tp-loader.spinner3 .bounce1,
+.tp-loader.spinner3 .bounce2,
+.tp-loader.spinner3 .bounce3 {
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: tp-bouncedelay 1.4s infinite ease-in-out;
+    animation: tp-bouncedelay 1.4s infinite ease-in-out;
+    /* Prevent first frame from flickering when animation starts */
+    
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.tp-loader.spinner3 .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.tp-loader.spinner3 .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+@-webkit-keyframes tp-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+    40% {
+        -webkit-transform: scale(1.0)
+    }
+}
+@keyframes tp-bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    40% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+.tp-loader.spinner4 {
+    margin: -20px 0px 0px -20px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    -webkit-animation: tp-rotate 2.0s infinite linear;
+    animation: tp-rotate 2.0s infinite linear;
+}
+.tp-loader.spinner4 .dot1,
+.tp-loader.spinner4 .dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    border-radius: 100%;
+    -webkit-animation: tp-bounce 2.0s infinite ease-in-out;
+    animation: tp-bounce 2.0s infinite ease-in-out;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+}
+.tp-loader.spinner4 .dot2 {
+    top: auto;
+    bottom: 0px;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+@-webkit-keyframes tp-rotate {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+@keyframes tp-rotate {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+@-webkit-keyframes tp-bounce {
+    0%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+@keyframes tp-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+.tp-transparentimg {
+    content: "url(../images/banner-images/transparent.png)"
+}
+.tp-3d {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+}
+.tp-caption img {
+    background: transparent;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
+    zoom: 1;
+}
+

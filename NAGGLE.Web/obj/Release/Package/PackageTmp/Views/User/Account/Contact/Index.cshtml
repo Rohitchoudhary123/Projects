@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutBusinessUser.cshtml";
+}
+
+<div id="contactContainer" class="display-none" ng-controller="contactController" >
+    <div id="ContactList" ng-show="CurrentMode==Mode.List">
+		
+        			@{Html.RenderPartial("~/Views/User/Account/Contact/_ContactList.cshtml");}	
+
+    </div>	
+    	<div  ng-show="CurrentMode==Mode.AddEdit">
+           @{Html.RenderPartial("~/Views/User/Account/Contact/_AddEditContact.cshtml");}
+
+
+			</div>	
+
+</div>
+<script src="~/Scripts/App/Controllers/User/Account/ContactController.js"></script>
+<script src="~/Scripts/App/Services/User/Account/ContactService.js"></script>

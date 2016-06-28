@@ -1,0 +1,125 @@
+﻿<div class="page-content-inner">
+    <div class="form-title">
+        Add New Attribute
+    </div>
+    <form name="AttributeForm">
+
+        <div class="form-sub-title">
+            <span>General</span>
+        </div>
+        <div class="main-form">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Attribute.FeatureName" name="FeatureName" placeholder="Feature Name" required-error-message="Required" validator="required">
+                        <i class="fa fa-building-o form-icon"></i>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="global-form-group">
+                        <select ng-options="featureType.FeatureTypeId as featureType.Name for featureType in FeatureTypes" ng-model="Attribute.FeatureTypeId" name="FeatureTypeId" class="form-control" required-error-message="Required" validator="required">
+                            <option value="">Select Feature Type</option>
+
+                        </select>
+                        <i class="fa fa-envelope-o form-icon"></i>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="global-form-group">
+                        <select ng-options="status.Id as status.name for status in StatusList" ng-model="Attribute.Status" name="AttributeStatus" class="form-control">
+                            <option value="">Select Status</option>
+
+                        </select>
+                        <i class="fa fa-envelope-o form-icon"></i>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="global-form-group">
+                        <textarea class="form-control" ng-model="Attribute.Description" name="Description" placeholder="Description"></textarea>
+                        <i class="fa fa-align-left form-icon"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-sub-title">
+            <span>Categories</span>
+        </div>
+          <div class="main-form">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="global-form-group">
+                        <div id="AssignCategorieTree" readonly="readonly" ishideparentcheckbox="false" data-displayscope="SelectedAssignCategorieName" placeholder="Categories" data-includecheckbox="true" data-isint="true" data-ngmodel="SelectedAssignCategories" data-model="SelectedAssignCategories" data-controller="attributeController" ca-multiselect-treeview-autocomplete="Categories" name="AssignCategorieTree"
+                             class="input_width no-blink-cursor addcursor form-control">
+                        </div>
+                        <i class="fa fa-gears form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="categories-list-new">
+                        <div class="list-button" ng-repeat="CategorieName in SelectedAssignCategorieName" ng-click="RemoveAssignCategorie(CategorieName.Id)">{{CategorieName.Name}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-form">
+            <div class="pull-left">
+                <a href="javascript:void(0)" validation-submit="AttributeForm" ng-click="saveAttributeDetail(Attribute,$event)" data-style="expand-right" data-size="s" class="btn ladda-button btn-green btn-md">Save
+                </a>
+                <a href="javascript:void(0)" ng-click="cancelAttribute()" class="btn btn-gray btn-md">Cancel
+                </a>
+            </div>
+        </div>
+
+     @*   <div class="modal fade" id="assign-categories" tabindex="-1" role="dialog" aria-labelledby="signup" aria-hidden="true">
+            <div class="modal-dialog theme-modal-dialog theme-modal-login">
+                <div class="theme-modal-content ssssssss">
+                    <a class="close" data-dismiss="modal" aria-hidden="true">
+                        <img src="~/Content/images/cross.png"></a>
+                    <div class="top-title">
+                        Assign Categories
+                    </div>
+
+                    <div class="shipkee-form">
+                        <div class="global-form-group modal-checkbox">
+
+                            <input type="text" id="AssignCategorieTree" readonly="readonly" ishideparentcheckbox="false" placeholder="Categories" data-includecheckbox="true" data-isint="true" data-ngmodel="SelectedAssignCategories" data-model="SelectedAssignCategories" data-controller="attributeController" ca-multiselect-treeview-autocomplete="Categories" name="AssignCategorieTree"
+                                class="input_width no-blink-cursor form-control" />
+                            <i class="fa fa-gears form-icon"></i>
+
+
+                             <div class="" ng-repeat="category in Categories">
+                                <input id="printed-material{{$index}}" class="styled" ng-model="category.checked" type="checkbox">
+                                <label for="printed-material">{{category.Name}}</label>
+                            </div>
+
+                        </div>
+                        <div class="global-form-group" style="display: none">
+                            <input type="text" class="form-control" placeholder="Add New">
+                            <i class="fa fa-plus form-icon"></i>
+                        </div>
+                        <div class="global-form-group" style="display: none">
+                            <div class="pull-right">
+                                <a href="company-add-account.html" class="btn btn-green btn-xs">Add New</a>
+                                <a href="#" class="btn btn-gray btn-xs" data-dismiss="modal" aria-hidden="true">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-buttons">
+                        <div class="pull-right">
+                            <a href="company-add-account.html" data-dismiss="modal" class="btn btn-green btn-md">Ok</a>
+                            <a href="#" class="btn btn-gray btn-md" data-dismiss="modal" aria-hidden="true">Cancel</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>*@
+
+    </form>
+
+</div>

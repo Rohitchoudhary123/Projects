@@ -1,0 +1,140 @@
+﻿<div class="page-content-inner">
+    <div class="form-title">
+        Products
+						<div class="pull-right right-action-buttons">
+                            <a href="javascript:void(0)" validation-reset="formProduct" ng-click="addNewProduct()" class="btn btn-blue btn-sm" title="Add New Product">Add New Product
+                            </a>
+                        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="global-form-group">
+                <input type="text" ng-model="SearchText" ng-change="productFilter()" class="form-control" placeholder="Keyword">
+                <i class="fa fa-key form-icon"></i>
+            </div>
+        </div>
+        @*	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+							<div class="global-form-group">
+                                <select class="form-control" id="select-1">
+                                    <option selected="selected" value="0">Item Name, Itemcode</option>
+                                    <option value="1">Itemcode 1</option>
+                                    <option value="2">Itemcode 2</option>
+                                    <option value="3">Itemcode 3</option>
+                                    <option value="4">Itemcode 4</option>
+                                    <option value="5">Itemcode 5</option>
+                                </select>
+								<i class="fa fa-gears form-icon"></i>
+							</div>
+						</div>*@
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="global-form-group">
+                <select class="form-control" ng-change="productFilter()" id="select-5" ng-model="FilterIsPublic">
+                    <option  value="">Is Public? </option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+
+                <i class="fa fa-user form-icon"></i>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="global-form-group">
+
+                <select ng-options="category.Id  as category.name for category in Categories" ng-change="productFilter()" ng-model="FilterCategoryId" class="form-control" id="select-2">
+                    <option selected="selected" value="">All Categories</option>
+
+                </select>
+                <i class="fa fa-gears form-icon"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-form">
+
+        <div class="product-detail" ng-repeat="product in Products">
+            
+            <img class="product-image" src="~/Content/images/noimage.jpg" />
+            
+
+            <div class="product-description">
+                <div class="title">
+                    @*<div class="checkbox-theme checkbox-color">
+										<input id="product-{{$index}}" class="styled" ng-model="product.checked" type="checkbox">
+										<label for="product-{{$index}}">{{product.ProductName}}</label>
+									</div>*@
+
+                    <div class="pull-right">
+                        @*<a data-toggle="tooltip" href="#" class="action-icon fa fa-copy" title="" data-original-title="Copy"></a>*@
+                        <a data-toggle="tooltip" href="javascript:void(0)" ng-click="getProductById(product.ProductId)" class="action-icon fa fa-pencil" title="" data-original-title="Edit"></a>
+                        <a data-toggle="tooltip" href="javascript:void(0)" ng-click="deleteProduct(product.ProductId,$index)" class="action-icon fa fa-trash" title="" data-original-title="Delete"></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="white-sub-box width100">
+                            <div class="address-icon">
+                                <i class="fa fa-barcode"></i>
+                            </div>
+                            <div class="white-box-label address-label">Code</div>
+                            <div class="white-box-data address-data">{{product.ProductCode}}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="white-sub-box width100">
+                            <div class="address-icon">
+                                <i class="fa fa-tags"></i>
+                            </div>
+                            <div class="white-box-label address-label">Class</div>
+                            <div class="white-box-data address-data">{{product.ProductClassName}}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="white-sub-box width100">
+                            <div class="address-icon">
+                                <i class="fa fa-toggle-on"></i>
+                            </div>
+                            <div class="white-box-label address-label">Status</div>
+                            <div class="white-box-data address-data">
+
+                                <select ng-options="status.Id as status.name for status in StatusList" ng-change="updateStatus(product)" ng-model="product.Status" name="Status" class="form-control form-control-status">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+  @*  <div class="main-form">
+        <div class="form-button">
+            <div class="form-button-label">Immediate Action</div>
+            <div class="global-form-group">
+                <select class="form-control" id="select-1">
+                    <option selected="selected" value="0">Select Action</option>
+                    <option value="1">Action 1</option>
+                    <option value="2">Action 2</option>
+                </select>
+                <i class="fa fa-tags form-icon"></i>
+            </div>
+        </div>
+
+        <div class="pull-left">
+            <a href="#" class="btn btn-green btn-md">Ok
+            </a>
+            <a href="#" class="btn btn-gray btn-md">Cancel
+            </a>
+        </div>
+
+    </div>*@
+    <div class="row">
+    <div class="col-xs-12" ng-hide="Products.length>0">
+        <b>No products found.</b>
+    </div>
+</div>
+</div>

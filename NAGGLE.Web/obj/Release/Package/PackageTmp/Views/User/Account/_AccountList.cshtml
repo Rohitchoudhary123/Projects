@@ -1,0 +1,79 @@
+﻿
+<div class="form-title">
+    Accounts
+    <div class="pull-right right-action-buttons">
+        <a href="javascript:void(0)" validation-reset="AddEditAccountForm" ng-click="addNewAccount()" class="btn btn-blue btn-sm" title="Add New Account">
+            Add New Account
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="global-form-group">
+            <select ng-options="account.AccountId as account.BusinessName for account in AccountList" ng-change="accountFilter()" ng-model="FilterAccountId" class="form-control" id="select-1">
+                <option selected="selected" value="">All Accounts</option>
+
+            </select>
+
+            <i class="fa fa-gears form-icon"></i>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="global-form-group">
+            <select ng-options="category.Id  as category.name for category in Categories" ng-change="accountFilter()" ng-model="FilterCategoryId" class="form-control" id="select-2">
+                <option selected="selected" value="">All Categories</option>
+
+            </select>
+            <i class="fa fa-gears form-icon"></i>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="global-form-group">
+            <select ng-options="account.AccountTypeId  as account.Name for account in AccountTypes" ng-change="accountFilter()" ng-model="FilterAccountTypeId" class="form-control" id="select-3">
+                <option selected="selected" value="">All AccountTypes</option>
+
+            </select>
+            <i class="fa fa-gears form-icon"></i>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="global-form-group">
+            <input type="text" class="form-control" ng-model="SearchText" ng-change="accountFilter()" placeholder="Search...">
+            <i class="fa fa-search form-icon"></i>
+        </div>
+    </div>
+</div>
+<div class="row">
+    @*<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-if="Accounts.length==0">
+        <b>No Accounts Related this User.</b>
+    </div>*@
+    <div ng-repeat="account in Accounts">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="white-box">
+                <div class="white-box-title">
+                    <span ng-bind="account.BusinessName"></span>
+                    <div class="pull-right">
+                        <a data-toggle="tooltip" href="javascript:void(0)" ng-click="viewAccount(account)" class="action-icon fa fa-eye" data-original-title="View"></a>
+                        <a data-toggle="tooltip" href="javascript:void(0)" ng-click="deleteAccount(account.AccountId,$index)" class="action-icon fa fa-trash" data-original-title="Delete"></a>
+                    </div>
+                </div>
+                <div class="white-box-detail">
+                    <div class="left-navigation width100">
+                        <div class="white-sub-box width100">
+                            <div class="address-icon">
+                                <i class="fa fa-envelope-o"></i>
+                            </div>
+                            <div class="white-box-label address-label">Email</div>
+                            <div class="white-box-data address-data" ng-bind="account.Email"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12" ng-hide="Accounts.length>0">
+        <b>No accounts found.</b>
+    </div>
+</div>

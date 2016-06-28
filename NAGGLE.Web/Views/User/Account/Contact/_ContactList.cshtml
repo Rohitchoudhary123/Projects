@@ -1,0 +1,97 @@
+﻿
+
+<div class="page-content-inner" ng-init="getAll()">
+    <div class="form-title">
+        Contacts
+        <div class="pull-right right-action-buttons">
+            <a href ="javascript:void(0)" validation-reset="AddEditContactForm" ng-click="addNewContact()" class="btn btn-blue btn-sm" title="Add New Contact">
+                Add New Contact
+                </a>
+</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="global-form-group">
+                <select ng-options="account.AccountId as account.BusinessName for account in Accounts" ng-change="filterContacts(SelectAccountId)" ng-model="SelectAccountId" class="form-control" id="select-1">
+                    <option selected="selected" value="">All Accounts</option>
+
+                </select>
+
+                <i class="fa fa-gears form-icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div ng-repeat="contact in Contacts">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="white-box">
+                    <div class="white-box-title">
+                        <span ng-bind="contact.FirstName"></span>
+                        <div class="pull-right">
+                            <a href="javascript:void(0)" ng-click="edit(contact.Id)" class="action-icon fa fa-pencil" title=""></a>
+                            <a data-toggle="tooltip" ng-click="delete(contact.Id,$index)" href="#" class="action-icon fa fa-trash" title="" data-original-title="Delete"></a>
+                        </div>
+                    </div>
+                    <div class="white-box-detail">
+                        <div class="left-navigation width100">
+                            <div class="white-sub-box width100">
+                                <div class="address-icon">
+                                    <i class="fa fa-building-o"></i>
+                                </div>
+                                <div class="white-box-label address-label">Business Name</div>
+                                <div class="white-box-data address-data" ng-bind="contact.BusinessName"></div>
+                            </div>
+                            <div class="white-sub-box width100">
+                                <div class="address-icon">
+                                    <i class="fa fa-envelope-o"></i>
+                                </div>
+                                <div class="white-box-label address-label">Email</div>
+                                <div class="white-box-data address-data" ng-bind="contact.Email"></div>
+                            </div>
+                            @*<div class="white-sub-box width100">
+                                <div class="address-icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="white-box-label">Phone</div>
+
+                                <div class="white-box-data" ng-bind="contact.Telephone">-</div>
+                            </div>
+                            <div class="white-sub-box width100">
+                                <div class="address-icon">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="white-box-label">Designation</div>
+                                <div class="white-box-data" ng-bind="contact.Designation"></div>
+                            </div>
+
+                            <div class="white-sub-box width100">
+                                <div class="address-icon">
+
+                                    <i class="fa fa-hospital-o"></i>
+                                </div>
+                                <div class="white-box-label">City</div>
+                                <div class="white-box-data" ng-bind="contact.City"></div>
+                            </div>
+                            <div class="white-sub-box width100">
+                                <div class="address-icon">
+                                    <i class="fa fa-fort-awesome"></i>
+                                </div>
+                                <div class="white-box-label">State</div>
+                                <div class="white-box-data" ng-if="contact.StateId==null">-</div>
+                                <div class="white-box-data" ng-if="contact.StateId!=null" ng-bind="contact.StateName"></div>
+                            </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+    <div class="row">
+        <div class="col-xs-12" ng-hide="Contacts.length>0">
+            <b>No contacts found.</b>
+        </div>
+    </div>
+</div>

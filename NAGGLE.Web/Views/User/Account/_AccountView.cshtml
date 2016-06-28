@@ -1,0 +1,297 @@
+﻿<div class="page-content-inner">
+    <div class="form-title" ng-bind="Account.BusinessName">
+    </div>
+    <div class="form-sub-title">
+        <span>General Details</span>
+        <div class="pull-right right-action-buttons">
+            <a href="javascript:void(0)" ng-click="editAccount(Account)" class="btn btn-blue btn-sm" title="Add New Product">
+                Edit
+            </a>
+        </div>
+    </div>
+
+    <div class="main-form">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">First Name</div>
+                    <div class="detail-detail" ng-bind="Account.FirstName"></div>
+                    <i class="fa fa-user detail-icon"></i>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Last Name</div>
+                    <div class="detail-detail" ng-if="Account.LastName!=null" ng-bind="Account.LastName"></div>
+                    <div class="detail-detail" ng-if="Account.LastName==null">&nbsp;</div>
+                    <i class="fa fa-user detail-icon"></i>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Email</div>
+                    <div class="detail-detail" ng-bind="Account.Email"></div>
+                    <i class="fa fa-envelope-o detail-icon"></i>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Address</div>
+                    <div class="detail-detail" ng-if="Account.Address!=null" ng-bind="Account.Address"></div>
+                    <div class="detail-detail" ng-if="Account.Address==null">&nbsp;</div>
+                    <i class="fa fa-align-left detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Country</div>
+                    <div class="detail-detail" ng-if="Account.CountryId!=0" ng-bind="Account.CountryType.Name"></div>
+                    <div class="detail-detail" ng-if="Account.CountryId==0">&nbsp;</div>
+                    <i class="fa fa-map-marker detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Zip Code</div>
+                    <div class="detail-detail" ng-if="Account.PostalCode!=null" ng-bind="Account.PostalCode"></div>
+                    <div class="detail-detail" ng-if="Account.PostalCode==null">&nbsp;</div>
+                    <i class="fa fa-map-marker detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">State</div>
+                    <div class="detail-detail" ng-if="Account.StateId!=0" ng-bind="Account.StateName"></div>
+                    <div class="detail-detail" ng-if="Account.StateId==0">&nbsp;</div>
+                    <i class="fa fa-fort-awesome detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">City</div>
+                    <div class="detail-detail" ng-if="Account.City==null">-</div>
+                    <div class="detail-detail" ng-if="Account.City!=null" ng-bind="Account.City"></div>
+                    <i class="fa fa-hospital-o detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Website</div>
+                    <div class="detail-detail" ng-if="Account.WebSite==null">-</div>
+                    <div class="detail-detail" ng-if="Account.WebSite!=null">
+
+                        <a target="_blank" class="btn-link detail-detail" ng-href="http://{{Account.WebSite}}">{{Account.WebSite}}</a>
+                    </div>
+                    <i class="fa fa-globe detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Phone</div>
+                    <div class="detail-detail" ng-if="Account.PhoneNumber==null">&nbsp;</div>
+                    <div class="detail-detail" ng-if="Account.PhoneNumber!=null" ng-bind="Account.PhoneNumber"></div>
+                    <i class="fa fa-phone detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Fax</div>
+                    <div class="detail-detail" ng-if="Account.FaxNumber==null">&nbsp;</div>
+                    <div class="detail-detail" ng-if="Account.FaxNumber!=null" ng-bind="Account.FaxNumber"></div>
+                    <i class="fa fa-fax detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Mobile</div>
+                    <div class="detail-detail" ng-if="Account.MobileNumber!=null" ng-bind="Account.MobileNumber"></div>
+                    <div class="detail-detail" ng-if="Account.MobileNumber==null">&nbsp;</div>
+                    <i class="fa fa-mobile detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Account Type</div>
+                    <div class="detail-detail" ng-if="Account.AccountTypeNames==''">&nbsp;</div>
+                    <div class="detail-detail" ng-if="Account.AccountTypeNames!=''" ng-bind="Account.AccountTypeNames"></div>
+                    <i class="fa fa-user detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Account Category</div>
+                    <div class="detail-detail" ng-if="Account.AccountCategoryNames==''">&nbsp;</div>
+                    <div class="detail-detail" ng-if="Account.AccountCategoryNames!=''" ng-bind="Account.AccountCategoryNames"></div>
+                    <i class="fa fa-gears detail-icon"></i>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="global-form-detail">
+                    <div class="detail-title">Description</div>
+                    <div class="detail-detail" ng-if="Account.Description==null">&nbsp;</div>
+                    <div class="detail-detail" ng-if="Account.Description!=null" ng-bind="Account.Description">
+                    </div>
+                    <i class="fa fa-align-left detail-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-controller="contactController">
+        <div class="form-sub-title">
+            <span>Contacts</span>
+            <div class="pull-right">
+                <button validation-reset="AddContactForm" ng-click="addContact()" class="btn btn-blue btn-sm" title="Add New Contact">
+                    Add Contact
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <input type="hidden" id="AccountContactShow" />
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="contact in Contacts">
+                <div class="white-box">
+                    <div class="white-box-title">
+                        <span ng-bind="contact.FirstName"></span>
+                        <div class="pull-right">
+                            <a href="javascript:void(0)" ng-click="editContact(contact.Id)" class="action-icon fa fa-pencil" title="">
+                            </a>
+                            <a data-toggle="tooltip" ng-click="deleteContact(contact.Id,$index)" href="javascript:void(0)" class="action-icon fa fa-trash" title="" data-original-title="Delete"></a>
+                        </div>
+                    </div>
+                    <div class="white-box-detail">
+                        <div class="left-navigation width100">
+                            <div class="white-sub-box width100">
+                                <div class="address-icon">
+                                    <i class="fa fa-building-o"></i>
+                                </div>
+                                <div class="white-box-label address-label">Business Name</div>
+                                <div class="white-box-data address-data" ng-bind="contact.BusinessName"></div>
+                            </div>
+                            <div class="white-sub-box width100">
+                                <div class="address-icon">
+                                    <i class="fa fa-envelope-o"></i>
+                                </div>
+                                <div class="white-box-label address-label">Email</div>
+                                <div class="white-box-data address-data" ng-bind="contact.Email"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="add-contact" tabindex="-1" role="dialog" aria-labelledby="signup" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog theme-modal-dialog theme-modal-login">
+                <div class="theme-modal-content ssssssss">
+                    <a class="close" data-dismiss="modal" aria-hidden="true">
+                        <img src="~/Content/images/cross.png">
+                    </a>
+                    <div class="top-title">
+                        Add Contact
+                    </div>
+                    <form name="AddContactForm">
+                        <div class="shipkee-form">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="global-form-group">
+                                        <input type="text" class="form-control" placeholder="First Name" maxlength="20" ng-model="Contact.FirstName" name="FirstName" required-error-message="Required" validator="required">
+                                        <i class="fa fa-user form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="global-form-group">
+                                        <input type="text" class="form-control" placeholder="Last Name" maxlength="20" ng-model="Contact.LastName">
+                                        <i class="fa fa-user form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="global-form-group">
+                                        <input type="text" class="form-control" placeholder="Phone" maxlength="12" ng-model="Contact.Telephone">
+                                        <i class="fa fa-phone form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="global-form-group">
+                                        <input type="text" class="form-control" placeholder="Email" ng-model="Contact.Email" maxlength="50" name="Email" required-error-message="Required" validator="required,email">
+                                        <i class="fa fa-envelope-o form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="global-form-group">
+                                        <input type="text" class="form-control" placeholder="Designation" maxlength="50" ng-model="Contact.Designation" name="Designation">
+                                        <i class="fa fa-user form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="global-form-group">
+                                        <input type="text" class="form-control" placeholder="Mobile" maxlength="12" ng-model="Contact.PhoneNumber" name="MobileNumber">
+                                        <i class="fa fa-mobile form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="global-form-group">
+                                        <textarea class="form-control" placeholder="Address" maxlength="50" ng-model="Contact.AddressLine1" name="AddressLine1"></textarea>
+                                        <i class="fa fa-align-left form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="double-form">
+                                        <div class="row">
+                                            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 right-padding">
+                                                <select class="form-control" id="Country" name="Country" placeholder="Country" ng-options="country as country.Name for country in Countries track by country.CountryId" ng-model="Contact.CountryType" ng-change="getStates(Contact.CountryType)">
+                                                    <option value="">Select Country</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 border-left left-padding">
+                                                <input type="text" class="form-control" maxlength="12" ng-model="Contact.PostalCode" placeholder="Zip Code">
+                                            </div>
+                                        </div>
+                                        <i class="fa fa-map-marker form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-if="Contact.CountryType.Code=='US'">
+                                    <div class="global-form-group">
+                                        <select class="form-control" name="State" placeholder="State" ng-options="state.StateId as state.Name for state in States" ng-model="Contact.StateId">
+                                            <option value="">Select State</option>
+                                        </select>
+                                        <i class="fa fa-fort-awesome form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="global-form-group">
+                                        <input type="text" class="form-control" ng-model="Contact.City" maxlength="15" placeholder="City">
+                                        <i class="fa fa-hospital-o form-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="global-form-group">
+                                        <input type="text" class="form-control" placeholder="Fax" maxlength="12" ng-model="Contact.FaxNumber">
+                                        <i class="fa fa-fax form-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-buttons">
+                            <div class="pull-right">
+                                <a href="javascript:void(0)" ng-click="saveContact(Contact,$event)" validation-submit="AddContactForm" data-style="expand-right" data-size="s" class="btn btn-green ladda-button btn-md">Save</a>
+                                <a href="javascript:void(0)" class="btn btn-gray btn-md" data-dismiss="modal" aria-hidden="true">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" ng-hide="Contacts.length>0">
+                <b>No contacts found.</b>
+            </div>
+        </div>
+    </div>
+</div>

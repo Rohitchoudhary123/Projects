@@ -1,0 +1,9 @@
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.Domain\bin\Debug\NAGGLE.Domain.dll
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.Domain\bin\Debug\NAGGLE.Domain.pdb
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.Domain\obj\Debug\NAGGLE.Domain.csprojResolveAssemblyReference.cache
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.Domain\obj\Debug\NAGGLE.Domain.dll
+E:\Navdeep\Projects\Naggle\DEVELOPMENT\CODEBASE\trunk\NAGGLE.Domain\obj\Debug\NAGGLE.Domain.pdb
+F:\Projects\Naggle.com\Code\trunk\NAGGLE.Domain\bin\Debug\NAGGLE.Domain.dll
+F:\Projects\Naggle.com\Code\trunk\NAGGLE.Domain\bin\Debug\NAGGLE.Domain.pdb
+F:\Projects\Naggle.com\Code\trunk\NAGGLE.Domain\obj\Debug\NAGGLE.Domain.dll
+F:\Projects\Naggle.com\Code\trunk\NAGGLE.Domain\obj\Debug\NAGGLE.Domain.pdb

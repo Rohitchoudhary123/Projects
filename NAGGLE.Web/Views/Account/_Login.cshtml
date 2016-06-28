@@ -1,0 +1,38 @@
+﻿<div >
+
+<div ng-controller="loginAccountController" class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog theme-modal-dialog theme-modal-login">				
+ <form name="loginform" id="loginform">		
+		<div class="theme-modal-content">
+					<a class="close" data-dismiss="modal" ng-click="resetLoginForm()" aria-hidden="true"><img src="~/Content/images/cross.png"></a>
+					<div class="top-title">Login with your Naggle account
+						<div class="top-sub-title">Welcome back! Enter your password to login!</div>					
+					</div>					
+					<div class="shipkee-form">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="global-form-group">
+									<input type="text" class="form-control" placeholder="Email Address" name="loginEmail" ng-model="Login.UserName" required-error-message="Required" validator="required,email">
+									<i class="fa fa-envelope form-icon"></i>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="global-form-group">
+									<input type="password" class="form-control" placeholder="Password" name="loginPassword" ng-model="Login.Password" required-error-message="Required" validator="required">
+									<i class="fa fa-lock form-icon"></i>
+								</div>
+							</div>
+						</div>						
+						<a href="#" ng-click="signInUser($event)" class="btn-login ladda-button" validation-submit="loginform" ng-click="SignInUser($event)" data-style="expand-right" data-size="l">
+							Login
+						</a>
+					</div>
+					<div class="content-popup">
+						<a href="#">Forgot Password?</a> | Don't have a Naggle account? <a href="#">Sign up now!</a>
+					</div>					
+				</div>
+</form>
+			</div>
+		</div>
+
+</div>

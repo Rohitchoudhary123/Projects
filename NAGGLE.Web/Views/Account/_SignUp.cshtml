@@ -1,0 +1,43 @@
+﻿
+	<div class="row" >
+        <form name="signUpForm">
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<div class="global-form-group">
+												<input type="text" class="form-control" name="FullName" ng-model="User.FullName" placeholder="Full Name" required-error-message="Required" validator="required">
+												<i class="fa fa-user form-icon"></i>
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+											<div class="global-form-group">
+												<input type="text" class="form-control" name="CompanyName" ng-model="User.CompanyName" placeholder="Company Name">
+												<i class="fa fa-building-o form-icon"></i>
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+											<div class="global-form-group">
+												<input type="text" class="form-control" name="PhoneNo" ng-model="User.PhoneNumber" placeholder="Phone No" required-error-message="Required" validator="required">
+												<i class="fa fa-phone form-icon"></i>
+											</div>
+											
+										</div>
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<div class="global-form-group">
+												<input type="text" class="form-control" autocomplete="off" name="Email" ng-model="User.Email" placeholder="Email" required-error-message="Required" validator="required,email">
+												<i class="fa fa-envelope-o form-icon"></i>
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<div class="global-form-group">
+												<input type="password" class="form-control" autocomplete="off" name="Password" ng-model="User.Password" placeholder="Password" required-error-message="Required" validator="required">
+												<i class="fa fa-lock form-icon"></i>
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<div class="small-content10">By clicking 'Create account', you agree to the Terms of Service and Privacy Policy.</div>
+										</div>
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<button ng-click="createUser($event)" class="btn btn-blue btn-md btn-block ladda-button" validation-submit="signUpForm" data-style="expand-right" data-size="l">Create Account</button>
+										</div>
+									
+            </form>
+            </div>

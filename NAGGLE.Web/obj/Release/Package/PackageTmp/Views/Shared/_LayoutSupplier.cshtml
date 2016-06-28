@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Naggle</title>
+ 
+   
+ <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,300italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="~/Content/Owl Carousel/owl.carousel.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link rel="shortcut icon" href="~/Content/images/favicon.png">
+    <link href="~/Content/banner.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="~/Content/naggle-theme.css">
+    <link rel="stylesheet" href="~/Content/naggle-theme-responsive.css">
+    <link href="~/Content/ladda-themeless.min.css" rel="stylesheet" />
+
+
+     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+ 
+    
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/spin.min.js"></script>
+    <script src="~/Scripts/ladda.min.js"></script>
+
+     @*@Scripts.Render("~/bundles/angularjs")*@
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-validation.js"></script>
+    <script src="~/Scripts/angular-validation-rule.js"></script>
+
+
+    <script src="~/Scripts/Bootbox/bootbox.min.js"></script>
+     
+    <script src="~/Scripts/naggle-theme.js"></script>
+    <script src="~/Scripts/Owl Carousel/owl.carousel.min.js"></script>
+  
+    <script src="~/Scripts/App/app.js"></script>
+  @{
+        var cp = System.Security.Claims.ClaimsPrincipal.Current.Identities.First();
+        var UserName = cp.Claims.FirstOrDefault(c => c.Type == "FullName");
+        
+        var uName =(UserName!=null)?UserName.Value:null;
+     }
+</head>
+
+<body ng-app="appNaggle">
+
+    <div class="wrapper">
+        <div class="menu">
+            <nav class="navbar navbar-default navbar-theme">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#"><img src="~/Content/images/naggle-logo.png"></a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <div class="pull-right">
+                            <div class="user-content" href="javascript:void(0)">Welcome  <span>@uName</span></div>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle user" type="button" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">My Profile</a></li>
+                                    <li><a href="#">Payment Profile</a></li>
+                                    <li><a href="#">Manage Users</a></li>
+                                    <li><a href="#">Change Password</a></li>
+                                    <li><a href="@Url.Action("LogOff", "Account")" class="border-none">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="page-content">
+          <ul id="sidebar" class="main-left-menu sidebar sidebar-a-menu  responsive " data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
+				<i class="fa-bars-icon fa fa-indent menu-min-icon" data-toggle="tooltip" title="" data-original-title="Show"></i>
+				<i class="fa-bars-icon fa fa-outdent menu-normal-icon" data-toggle="tooltip" title="" data-original-title="Hide"></i>
+				<div id="accordion">
+					<li class="active _Menu">
+						<a href="#">
+							<i class="fa fa-home"></i> <span>Home</span>
+						</a>
+					</li>
+					
+				</div>				
+			</ul>
+            <div class="main-content">
+                <div class="page-content-inner">
+                    <div class="row">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        
+    </div>
+
+    <div id="preloader" class="display-none">
+        <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+    </div>
+       <script>
+           $(function () {
+               setNavigation();
+           });
+
+           function setNavigation() {
+               var path = window.location.pathname;
+               path = path.replace(/\/$/, "");
+               path = decodeURIComponent(path);
+
+               $("#sidebar li").each(function () {
+                   var href = $(this).find("a").attr('href');
+                   if (path === href) {
+                       $(this).addClass('active');
+                       $(this).parents("li").addClass('active');
+                   }
+               });
+           }
+    </script>
+</body>
+</html> 

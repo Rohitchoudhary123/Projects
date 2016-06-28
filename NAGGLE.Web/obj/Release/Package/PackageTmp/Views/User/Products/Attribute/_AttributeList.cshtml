@@ -1,0 +1,62 @@
+﻿
+<div class="page-content-inner">
+					<div class="form-title">
+						Attributes
+						<div class="pull-right right-action-buttons">
+							<a href="javascript:void(0)" validation-reset="AttributeForm" ng-click="addNewAttribute()" class="btn btn-blue btn-sm" title="Add New Attribute">
+								Add New Attribute
+							</a>							
+						</div>
+					</div>
+					<div class="row">
+        <div class="col-xs-12" ng-hide="Attributes.length>0">
+            <b>No Attribute found.</b>
+        </div>
+    </div>
+					<div class="main-form">
+					
+						<div class="row">						
+							<div ng-repeat="attribute in Attributes" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+								<div class="white-box">
+									<div class="white-box-title">
+										<div class="checkbox-theme checkbox-color">
+											<input id="attribute-{{$index}}" ng-model="attribute.checked" name="Attribute{{$index}}" class="styled" type="checkbox">
+											<label for="attribute-{{$index}}"> {{attribute.FeatureName}}</label>
+										</div>
+										<div class="pull-right">
+											<a href="javascript:void(0)" ng-click="editAttribute(attribute.AttributeId)" class="action-icon fa fa-pencil" title=""></a>
+											<a data-toggle="tooltip" href="javascript:void(0)" ng-click="deleteAttribute(attribute)"  class="action-icon fa fa-trash" title="" data-original-title="Delete"></a>
+										</div>
+									</div>
+									<div class="white-box-detail">
+										<div class="left-navigation width100">									
+											<div class="white-sub-box width100">
+												<div class="address-icon">
+													<i class="fa fa-toggle-on"></i>
+												</div>
+												<div class="white-box-label address-label">Status</div>
+												<div class="white-box-data address-data">												
+													<select ng-options="status.Id as status.name for status in StatusList" ng-change="updateStatus(attribute)" ng-model="attribute.Status" name="Status" class="form-control form-control-status" >
+														
+													</select>
+												</div>
+											</div>				
+										</div>
+									</div>
+								</div>				
+							</div>
+							
+						</div>
+					</div>
+				
+    	<div class="main-form" ng-Show="Attributes.length>0">
+						<div class="pull-left">
+							@*<a href="#" class="btn btn-green btn-md">
+								Add
+							</a>*@
+							<a href="#" ng-click="deleteAttribute()" class="btn btn-gray btn-md">
+								Delete
+							</a>
+						</div>
+					</div>
+				</div>

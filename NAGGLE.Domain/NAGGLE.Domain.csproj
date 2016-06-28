@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BB0A642-4F59-4CE1-BC59-C6E1F099DEFE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NAGGLE.Domain</RootNamespace>
+    <AssemblyName>NAGGLE.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\AccountAccountTypeModel.cs" />
+    <Compile Include="Model\AccountCategoryModel.cs" />
+    <Compile Include="Model\AccountCompanyModel.cs" />
+    <Compile Include="Model\AccountModel.cs" />
+    <Compile Include="Model\AccountTypeModel.cs" />
+    <Compile Include="Model\AccountUserModel.cs" />
+    <Compile Include="Model\AttributeCategoryModel.cs" />
+    <Compile Include="Model\AttributeModel.cs" />
+    <Compile Include="Model\AutoCompleteModel.cs" />
+    <Compile Include="Model\AvailabilityModel.cs" />
+    <Compile Include="Model\CategoryModel.cs" />
+    <Compile Include="Model\CompanyModel.cs" />
+    <Compile Include="Model\ContactModel.cs" />
+    <Compile Include="Model\CountryModel.cs" />
+    <Compile Include="Model\DivisionModel.cs" />
+    <Compile Include="Model\FeatureTypeModel.cs" />
+    <Compile Include="Model\ProductAccountPriceModel.cs" />
+    <Compile Include="Model\ProductAttributeModel.cs" />
+    <Compile Include="Model\ProductAvailabilityModel.cs" />
+    <Compile Include="Model\ProductCategoryModel.cs" />
+    <Compile Include="Model\ProductClassModel.cs" />
+    <Compile Include="Model\ProductDivisionModel.cs" />
+    <Compile Include="Model\ProductModel.cs" />
+    <Compile Include="Model\ProductPricingModel.cs" />
+    <Compile Include="Model\StateModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

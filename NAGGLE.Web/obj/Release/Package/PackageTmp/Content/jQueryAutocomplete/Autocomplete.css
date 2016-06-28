@@ -1,0 +1,11 @@
+﻿    .autocomplete-suggestions { border: 1px solid #999; background: #FFF; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 6px 0px; white-space: nowrap; /*overflow: hidden;*/ }
+.autocomplete-no-suggestion { padding: 2px 5px;}
+.autocomplete-selected { cursor:pointer; background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: bold; color: #000; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { font-weight: bold; font-size: 16px; color: #000; display: block; border-bottom: 1px solid #000; }
+.sugg-container{  padding: 5px 0px 4px 5px;font-size:13px}
+.autocomplete-suggestion > .suggestion-hierarchy{
+    color:rgb(137, 121, 121);
+}

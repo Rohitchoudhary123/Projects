@@ -1,0 +1,98 @@
+﻿<div class="banner-theme" ng-controller="signUpController">
+    <div class="banner-shadow">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="banner-title">Close more deals in less time.</div>
+                    <div class="banner-paragraph">Zoho CRM gives you a 360-degree view of your complete sales cycle and pipeline. Identify trends, spot opportunities, increase efficiency, and reduce costs with the right answers, right now.</div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <div class="banner-form">
+                        <div class="banner-title">Start your free trial</div>
+                        <input type="hidden" id="IsAccount" value="@ViewBag.IsConfirmed" />
+                        <input type="hidden" id="UserId" value="@ViewBag.UserId" />
+
+                        <div class="theme-form">
+                            @{Html.RenderPartial("~/Views/Account/_SignUp.cshtml");}
+
+                            <div class="modal fade" id="Account-Confirmation" tabindex="-1" role="dialog" aria-labelledby="signup" aria-hidden="true">
+                                <div class="modal-dialog theme-modal-dialog theme-modal-login">
+                                    <form name="Confirmationform" id="Confirmationform">
+                                        <div class="theme-modal-content">
+                                            <div class="top-title">
+                                               Set your Password
+                                            </div>
+                                            <div class="shipkee-form">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="global-form-group">
+                                                            <input type="password" class="form-control" placeholder="Password" id="Password" name="Password" ng-model="User.Password" required-error-message="Password is Required" validator="required,passwordlength">
+                                                            <i class="fa fa-key form-icon"></i>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="global-form-group">
+                                                            <input type="password" class="form-control" placeholder="Confirm Password" ng-minlength="6" ng-maxlength="12" id="Confirm Password" name="Confirm Password" data-pwd="{{User.Password}}" ng-model="User.ConfirmPassword" validator="confirmpassword">
+                                                            <i class="fa fa-key form-icon"></i>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button href="javascript:void(0)" class="btn btn-blue btn-login ladda-button" validation-submit="Confirmationform" ng-click="savePassword($event)" data-style="expand-right" data-size="l">
+                                                    Save
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="why-shipkee">
+    <div class="container">
+        <div class="why-shipkee-title">Large Supplies <span>Database</span> System</div>
+
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <p>
+                    Naggle is Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
+						printer took a galley of type and scrambled it to make a type specimen book. It has survived not 
+						only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. I
+						t was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, a
+						nd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+						Naggle is Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
+						printer took a galley of type and scrambled it to make a type specimen book.<br />
+                    It has survived not 
+						only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. I
+						t was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, a
+						nd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0vrdgDdPApQ"></iframe>
+                </div>
+                <div class="video-title">Watch to learn how Naggle can benefit you!</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<link href="~/Content/Pnotify/pnotify.custom.min.css" rel="stylesheet" />
+<script src="~/Scripts/Pnotify/pnotify.custom.min.js"></script>

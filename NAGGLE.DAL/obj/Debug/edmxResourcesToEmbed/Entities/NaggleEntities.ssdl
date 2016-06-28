@@ -1,0 +1,898 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NaggleModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="NaggleModelStoreContainer">
+    <EntitySet Name="Account" EntityType="NaggleModel.Store.Account" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountAccountType" EntityType="NaggleModel.Store.AccountAccountType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountCategory" EntityType="NaggleModel.Store.AccountCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountCompany" EntityType="NaggleModel.Store.AccountCompany" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountContact" EntityType="NaggleModel.Store.AccountContact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountType" EntityType="NaggleModel.Store.AccountType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Attribute" EntityType="NaggleModel.Store.Attribute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AttributeCategory" EntityType="NaggleModel.Store.AttributeCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Availability" EntityType="NaggleModel.Store.Availability" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Category" EntityType="NaggleModel.Store.Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Company" EntityType="NaggleModel.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Country" EntityType="NaggleModel.Store.Country" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Division" EntityType="NaggleModel.Store.Division" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FeatureType" EntityType="NaggleModel.Store.FeatureType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Product" EntityType="NaggleModel.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductAccountPrice" EntityType="NaggleModel.Store.ProductAccountPrice" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductAttribute" EntityType="NaggleModel.Store.ProductAttribute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductAvailability" EntityType="NaggleModel.Store.ProductAvailability" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductCategory" EntityType="NaggleModel.Store.ProductCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductClass" EntityType="NaggleModel.Store.ProductClass" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductDivision" EntityType="NaggleModel.Store.ProductDivision" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductPricing" EntityType="NaggleModel.Store.ProductPricing" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Role" EntityType="NaggleModel.Store.Role" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="State" EntityType="NaggleModel.Store.State" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="NaggleModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Account_User" Association="NaggleModel.Store.FK_Account_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountAccountType_Account" Association="NaggleModel.Store.FK_AccountAccountType_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="AccountAccountType" EntitySet="AccountAccountType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountAccountType_AccountType" Association="NaggleModel.Store.FK_AccountAccountType_AccountType">
+      <End Role="AccountType" EntitySet="AccountType" />
+      <End Role="AccountAccountType" EntitySet="AccountAccountType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountCategory_Account" Association="NaggleModel.Store.FK_AccountCategory_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="AccountCategory" EntitySet="AccountCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountCategory_Category" Association="NaggleModel.Store.FK_AccountCategory_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="AccountCategory" EntitySet="AccountCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountCompany_Account" Association="NaggleModel.Store.FK_AccountCompany_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="AccountCompany" EntitySet="AccountCompany" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountCompany_Company" Association="NaggleModel.Store.FK_AccountCompany_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="AccountCompany" EntitySet="AccountCompany" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountContact_Account" Association="NaggleModel.Store.FK_AccountContact_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="AccountContact" EntitySet="AccountContact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountContact_User" Association="NaggleModel.Store.FK_AccountContact_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="AccountContact" EntitySet="AccountContact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attribute_FeatureType" Association="NaggleModel.Store.FK_Attribute_FeatureType">
+      <End Role="FeatureType" EntitySet="FeatureType" />
+      <End Role="Attribute" EntitySet="Attribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeCategory_AttributeCategory" Association="NaggleModel.Store.FK_AttributeCategory_AttributeCategory">
+      <End Role="Attribute" EntitySet="Attribute" />
+      <End Role="AttributeCategory" EntitySet="AttributeCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeCategory_Category" Association="NaggleModel.Store.FK_AttributeCategory_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="AttributeCategory" EntitySet="AttributeCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_User" Association="NaggleModel.Store.FK_Company_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ProductClass" Association="NaggleModel.Store.FK_Product_ProductClass">
+      <End Role="ProductClass" EntitySet="ProductClass" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAccountPrice_Account" Association="NaggleModel.Store.FK_ProductAccountPrice_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="ProductAccountPrice" EntitySet="ProductAccountPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAccountPrice_Product" Association="NaggleModel.Store.FK_ProductAccountPrice_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductAccountPrice" EntitySet="ProductAccountPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAttribute_Attribute" Association="NaggleModel.Store.FK_ProductAttribute_Attribute">
+      <End Role="Attribute" EntitySet="Attribute" />
+      <End Role="ProductAttribute" EntitySet="ProductAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAttribute_Product" Association="NaggleModel.Store.FK_ProductAttribute_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductAttribute" EntitySet="ProductAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAvailability_Availability" Association="NaggleModel.Store.FK_ProductAvailability_Availability">
+      <End Role="Availability" EntitySet="Availability" />
+      <End Role="ProductAvailability" EntitySet="ProductAvailability" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAvailability_Product" Association="NaggleModel.Store.FK_ProductAvailability_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductAvailability" EntitySet="ProductAvailability" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_Category" Association="NaggleModel.Store.FK_ProductCategory_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_Product" Association="NaggleModel.Store.FK_ProductCategory_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDivision_Division" Association="NaggleModel.Store.FK_ProductDivision_Division">
+      <End Role="Division" EntitySet="Division" />
+      <End Role="ProductDivision" EntitySet="ProductDivision" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDivision_Product" Association="NaggleModel.Store.FK_ProductDivision_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductDivision" EntitySet="ProductDivision" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductPricing_Product" Association="NaggleModel.Store.FK_ProductPricing_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductPricing" EntitySet="ProductPricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Role_Company" Association="NaggleModel.Store.FK_Role_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Role" EntitySet="Role" />
+    </AssociationSet>
+    <AssociationSet Name="FK_State_Country" Association="NaggleModel.Store.FK_State_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="State" EntitySet="State" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Company" Association="NaggleModel.Store.FK_User_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Country" Association="NaggleModel.Store.FK_User_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Country1" Association="NaggleModel.Store.FK_User_Country1">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_State" Association="NaggleModel.Store.FK_User_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User" Association="NaggleModel.Store.FK_User_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="User1" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User1" Association="NaggleModel.Store.FK_User_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="User1" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BusinessName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="WebSite" Type="varchar" MaxLength="50" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="FaxNumber" Type="varchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="OwnerId" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="AccountAccountType">
+    <Key>
+      <PropertyRef Name="AccountAccountTypeId" />
+      <PropertyRef Name="AccountTypeId" />
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountAccountTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountTypeId" Type="int" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountCategory">
+    <Key>
+      <PropertyRef Name="AccountCategoryId" />
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountCompany">
+    <Key>
+      <PropertyRef Name="AccountCompanyId" />
+      <PropertyRef Name="AccountId" />
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="AccountCompanyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountContact">
+    <Key>
+      <PropertyRef Name="AccountContactId" />
+      <PropertyRef Name="AccountId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="AccountContactId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountType">
+    <Key>
+      <PropertyRef Name="AccountTypeId" />
+    </Key>
+    <Property Name="AccountTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Attribute">
+    <Key>
+      <PropertyRef Name="AttributeId" />
+    </Key>
+    <Property Name="AttributeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FeatureName" Type="varchar" MaxLength="50" />
+    <Property Name="FeatureTypeId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="AttributeCategory">
+    <Key>
+      <PropertyRef Name="AttributeCategoryId" />
+      <PropertyRef Name="AttributeId" />
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="AttributeCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AttributeId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Availability">
+    <Key>
+      <PropertyRef Name="AvailabilityId" />
+    </Key>
+    <Property Name="AvailabilityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="IsSelectable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="OwnerId" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="DivisionId" />
+    </Key>
+    <Property Name="DivisionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FeatureType">
+    <Key>
+      <PropertyRef Name="FeatureTypeId" />
+    </Key>
+    <Property Name="FeatureTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCode" Type="varchar" MaxLength="50" />
+    <Property Name="ProductName" Type="varchar" MaxLength="50" />
+    <Property Name="ProductTag" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="money" />
+    <Property Name="Unit" Type="int" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="ProductClassId" Type="int" />
+    <Property Name="StockType" Type="int" Nullable="false" />
+    <Property Name="IsPublic" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="IsDefined" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductAccountPrice">
+    <Key>
+      <PropertyRef Name="ProductAccountPriceId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="ProductAccountPriceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Price" Type="money" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductAttribute">
+    <Key>
+      <PropertyRef Name="ProductAttributeId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="AttributeId" />
+    </Key>
+    <Property Name="ProductAttributeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="AttributeId" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProductAvailability">
+    <Key>
+      <PropertyRef Name="ProductAvailabilityId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="AvailabilityId" />
+    </Key>
+    <Property Name="ProductAvailabilityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="AvailabilityId" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="ProductCategoryId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="ProductCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductClass">
+    <Key>
+      <PropertyRef Name="ProductClassId" />
+    </Key>
+    <Property Name="ProductClassId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProductDivision">
+    <Key>
+      <PropertyRef Name="ProductDivisionId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="DivisionId" />
+    </Key>
+    <Property Name="ProductDivisionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="DivisionId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductPricing">
+    <Key>
+      <PropertyRef Name="ProductPricingId" />
+    </Key>
+    <Property Name="ProductPricingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Price" Type="money" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Type" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="CompanyId" Type="int" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="10" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="BusinessName" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="Shipments" Type="int" />
+    <Property Name="ShipmentType" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="500" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="500" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="BillAddressLine1" Type="nvarchar" MaxLength="500" />
+    <Property Name="BillAddressLine2" Type="nvarchar" MaxLength="500" />
+    <Property Name="BillAddressLine3" Type="nvarchar" MaxLength="500" />
+    <Property Name="BillCity" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillStateId" Type="int" />
+    <Property Name="BillPostalCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="BillTelephone" Type="nvarchar" MaxLength="20" />
+    <Property Name="BillEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillCountryId" Type="int" />
+    <Property Name="BillCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="FaxNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Account_User">
+    <End Role="User" Type="NaggleModel.Store.User" Multiplicity="0..1" />
+    <End Role="Account" Type="NaggleModel.Store.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="OwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountAccountType_Account">
+    <End Role="Account" Type="NaggleModel.Store.Account" Multiplicity="1" />
+    <End Role="AccountAccountType" Type="NaggleModel.Store.AccountAccountType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="AccountAccountType">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountAccountType_AccountType">
+    <End Role="AccountType" Type="NaggleModel.Store.AccountType" Multiplicity="1" />
+    <End Role="AccountAccountType" Type="NaggleModel.Store.AccountAccountType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountType">
+        <PropertyRef Name="AccountTypeId" />
+      </Principal>
+      <Dependent Role="AccountAccountType">
+        <PropertyRef Name="AccountTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountCategory_Account">
+    <End Role="Account" Type="NaggleModel.Store.Account" Multiplicity="1" />
+    <End Role="AccountCategory" Type="NaggleModel.Store.AccountCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="AccountCategory">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountCategory_Category">
+    <End Role="Category" Type="NaggleModel.Store.Category" Multiplicity="1" />
+    <End Role="AccountCategory" Type="NaggleModel.Store.AccountCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="AccountCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountCompany_Account">
+    <End Role="Account" Type="NaggleModel.Store.Account" Multiplicity="1" />
+    <End Role="AccountCompany" Type="NaggleModel.Store.AccountCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="AccountCompany">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountCompany_Company">
+    <End Role="Company" Type="NaggleModel.Store.Company" Multiplicity="1" />
+    <End Role="AccountCompany" Type="NaggleModel.Store.AccountCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="AccountCompany">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountContact_Account">
+    <End Role="Account" Type="NaggleModel.Store.Account" Multiplicity="1" />
+    <End Role="AccountContact" Type="NaggleModel.Store.AccountContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="AccountContact">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountContact_User">
+    <End Role="User" Type="NaggleModel.Store.User" Multiplicity="1" />
+    <End Role="AccountContact" Type="NaggleModel.Store.AccountContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountContact">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attribute_FeatureType">
+    <End Role="FeatureType" Type="NaggleModel.Store.FeatureType" Multiplicity="1" />
+    <End Role="Attribute" Type="NaggleModel.Store.Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FeatureType">
+        <PropertyRef Name="FeatureTypeId" />
+      </Principal>
+      <Dependent Role="Attribute">
+        <PropertyRef Name="FeatureTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeCategory_AttributeCategory">
+    <End Role="Attribute" Type="NaggleModel.Store.Attribute" Multiplicity="1" />
+    <End Role="AttributeCategory" Type="NaggleModel.Store.AttributeCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attribute">
+        <PropertyRef Name="AttributeId" />
+      </Principal>
+      <Dependent Role="AttributeCategory">
+        <PropertyRef Name="AttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeCategory_Category">
+    <End Role="Category" Type="NaggleModel.Store.Category" Multiplicity="1" />
+    <End Role="AttributeCategory" Type="NaggleModel.Store.AttributeCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="AttributeCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_User">
+    <End Role="User" Type="NaggleModel.Store.User" Multiplicity="0..1" />
+    <End Role="Company" Type="NaggleModel.Store.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="OwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ProductClass">
+    <End Role="ProductClass" Type="NaggleModel.Store.ProductClass" Multiplicity="0..1" />
+    <End Role="Product" Type="NaggleModel.Store.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductClass">
+        <PropertyRef Name="ProductClassId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAccountPrice_Account">
+    <End Role="Account" Type="NaggleModel.Store.Account" Multiplicity="1" />
+    <End Role="ProductAccountPrice" Type="NaggleModel.Store.ProductAccountPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="ProductAccountPrice">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAccountPrice_Product">
+    <End Role="Product" Type="NaggleModel.Store.Product" Multiplicity="1" />
+    <End Role="ProductAccountPrice" Type="NaggleModel.Store.ProductAccountPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductAccountPrice">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAttribute_Attribute">
+    <End Role="Attribute" Type="NaggleModel.Store.Attribute" Multiplicity="1" />
+    <End Role="ProductAttribute" Type="NaggleModel.Store.ProductAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attribute">
+        <PropertyRef Name="AttributeId" />
+      </Principal>
+      <Dependent Role="ProductAttribute">
+        <PropertyRef Name="AttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAttribute_Product">
+    <End Role="Product" Type="NaggleModel.Store.Product" Multiplicity="1" />
+    <End Role="ProductAttribute" Type="NaggleModel.Store.ProductAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductAttribute">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAvailability_Availability">
+    <End Role="Availability" Type="NaggleModel.Store.Availability" Multiplicity="1" />
+    <End Role="ProductAvailability" Type="NaggleModel.Store.ProductAvailability" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Availability">
+        <PropertyRef Name="AvailabilityId" />
+      </Principal>
+      <Dependent Role="ProductAvailability">
+        <PropertyRef Name="AvailabilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAvailability_Product">
+    <End Role="Product" Type="NaggleModel.Store.Product" Multiplicity="1" />
+    <End Role="ProductAvailability" Type="NaggleModel.Store.ProductAvailability" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductAvailability">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_Category">
+    <End Role="Category" Type="NaggleModel.Store.Category" Multiplicity="1" />
+    <End Role="ProductCategory" Type="NaggleModel.Store.ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_Product">
+    <End Role="Product" Type="NaggleModel.Store.Product" Multiplicity="1" />
+    <End Role="ProductCategory" Type="NaggleModel.Store.ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDivision_Division">
+    <End Role="Division" Type="NaggleModel.Store.Division" Multiplicity="1" />
+    <End Role="ProductDivision" Type="NaggleModel.Store.ProductDivision" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Division">
+        <PropertyRef Name="DivisionId" />
+      </Principal>
+      <Dependent Role="ProductDivision">
+        <PropertyRef Name="DivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDivision_Product">
+    <End Role="Product" Type="NaggleModel.Store.Product" Multiplicity="1" />
+    <End Role="ProductDivision" Type="NaggleModel.Store.ProductDivision" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductDivision">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductPricing_Product">
+    <End Role="Product" Type="NaggleModel.Store.Product" Multiplicity="1" />
+    <End Role="ProductPricing" Type="NaggleModel.Store.ProductPricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductPricing">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Role_Company">
+    <End Role="Company" Type="NaggleModel.Store.Company" Multiplicity="0..1" />
+    <End Role="Role" Type="NaggleModel.Store.Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="Role">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_State_Country">
+    <End Role="Country" Type="NaggleModel.Store.Country" Multiplicity="1" />
+    <End Role="State" Type="NaggleModel.Store.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Company">
+    <End Role="Company" Type="NaggleModel.Store.Company" Multiplicity="0..1" />
+    <End Role="User" Type="NaggleModel.Store.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Country">
+    <End Role="Country" Type="NaggleModel.Store.Country" Multiplicity="0..1" />
+    <End Role="User" Type="NaggleModel.Store.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Country1">
+    <End Role="Country" Type="NaggleModel.Store.Country" Multiplicity="0..1" />
+    <End Role="User" Type="NaggleModel.Store.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="BillCountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_State">
+    <End Role="State" Type="NaggleModel.Store.State" Multiplicity="0..1" />
+    <End Role="User" Type="NaggleModel.Store.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User">
+    <End Role="User" Type="NaggleModel.Store.User" Multiplicity="1" />
+    <End Role="User1" Type="NaggleModel.Store.User" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User1">
+    <End Role="User" Type="NaggleModel.Store.User" Multiplicity="1" />
+    <End Role="User1" Type="NaggleModel.Store.User" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CreateUserRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="int" Mode="In" />
+    <Parameter Name="roleId" Type="int" Mode="In" />
+  </Function>
+</Schema>

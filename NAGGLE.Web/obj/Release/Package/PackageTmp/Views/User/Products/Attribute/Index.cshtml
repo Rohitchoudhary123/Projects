@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBusinessUser.cshtml";
+}
+<link href="~/Content/treePlug/zTreeStyle.css" rel="stylesheet" />
+<link href="~/Content/jQueryAutocomplete/Autocomplete.css" rel="stylesheet" />
+<link href="~/Content/Multiselect/multi-select.css" rel="stylesheet" />
+
+
+<div id="mainContainer" class="display-none"  ng-controller="attributeController">
+ 
+       
+            <div id="AttributeList" ng-show="CurrentMode==Mode.List">
+    @{Html.RenderPartial("~/Views/User/Products/Attribute/_AttributeList.cshtml");}
+          </div>
+   
+    <div id="AddEditAttribute" ng-show="CurrentMode==Mode.AddEdit">
+        @{Html.RenderPartial("~/Views/User/Products/Attribute/_AddEditAttribute.cshtml");}
+
+        </div>
+    </div>
+<script src="~/Scripts/treePlug/jquery.ztree.core-3.5.js"></script>
+<script src="~/Scripts/treePlug/jquery.ztree.excheck-3.5.js"></script>
+<script src="~/Scripts/jQueryAutocomplete/jquery.autocomplete.js"></script>
+<script src="~/Scripts/treePlug/TreeView_AutoComplete.js"></script>
+<script src="~/Scripts/bootstrap-multiselect.js"></script>
+<script src="~/Scripts/App/Directives/Common.js"></script>
+<script src="~/Scripts/App/Directives/treeView.js"></script>
+<script src="~/Scripts/App/Controllers/User/Product/AttributeController.js"></script>
+<script src="~/Scripts/App/Services/User/Product/AttributeService.js"></script>

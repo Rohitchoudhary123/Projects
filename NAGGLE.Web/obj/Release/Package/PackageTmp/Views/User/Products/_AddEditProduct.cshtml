@@ -1,0 +1,419 @@
+﻿<div class="page-content-inner">
+    <div class="form-title">
+        Add New Product
+    </div>
+    <div class="form-sub-title">
+        <span>Item Details</span>
+    </div>
+    <form name="formProduct">
+        <div class="main-form">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Product.ProductCode" placeholder="Product Code">
+                        <i class="fa fa-dropbox form-icon"></i>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <select ng-model="Product.ProductClassId" ng-options="product.ProductClassId as product.Name for product in ProductClasses" class="form-control" id="select-1">
+                            <option value="">Product Class</option>
+                        </select>
+                        <i class="fa fa-dropbox form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Product.ProductName" placeholder="Product Name" name="ProductName" required-error-message="Required" validator="required">
+                        <i class="fa fa-dropbox form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Product.ProductTag" placeholder="Product Tag" name="ProductTag" required-error-message="Required" validator="required">
+                        <i class="fa fa-dropbox form-icon"></i>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="global-form-group">
+                        <select ng-model="Product.StockType" ng-options="item.Id as item.name for item in Stock" class="form-control">
+                            <option value="">Stock</option>
+                        </select>
+                        <i class="fa fa-check-square-o form-icon"></i>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="global-form-group">
+                        <select ng-options="status.Id as status.name for status in StatusList" ng-model="Product.Status" name="ProductStatus" class="form-control">
+                            <option value="">Select Status</option>
+
+                        </select>
+                        <i class="fa fa-envelope-o form-icon"></i>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="global-form-group">
+                        <input type="text" class="form-control" ng-model="Product.Price" placeholder="Price">
+                        <i class="fa fa-money form-icon"></i>
+                    </div>
+                </div>
+
+                @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="double-form">
+									<div class="row">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+											<input type="text" class="form-control" placeholder="Unit">
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 multiply-icon">
+											<input type="text" class="form-control">
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 equal-icon">
+											<input type="text" class="form-control">
+										</div>
+									</div>
+									<i class="fa fa-tag form-icon"></i>
+								</div>			
+							</div>*@
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="checkbox-theme checkbox-color spacer-top-10 spacer-bottom-10">
+                        <input id="public-check" ng-model="Product.IsPublic" class="styled" type="checkbox">
+                        <label for="public-check">Is Public? </label>
+                    </div>
+                </div>
+                @*  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="row spacer-top-10 spacer-bottom-10">
+                    <div ng-repeat="item in Defines" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="">
+                            <input id="predefined{{$index}}" class="styled" ng-model="item.checked"  name="predefined" type="radio">
+                            <label for="predefined{{$index}}">{{item.name}}</label>
+                        </div>
+                    </div>
+                    </div></div>*@
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="row spacer-top-10 spacer-bottom-10">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="radio-theme radio-color">
+                                <input id="predefined" class="styled" ng-model="Product.IsDefined"  ng-value="false" name="defined" type="radio">
+                                <label for="predefined">Predefined</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="radio-theme radio-color">
+                                <input id="defined" class="styled" ng-model="Product.IsDefined"  ng-value="true" name="defined" type="radio">
+                                <label for="defined">Defined</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+        <div class="form-sub-title">
+            <span>Categories</span>
+        </div>       </div>
+                <div class="main-form">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="global-form-group">
+                            <div id="AssignCategorieTree" readonly="readonly" ishideparentcheckbox="false" data-displayscope="SelectedAssignCategorieName" placeholder="Categories" data-includecheckbox="true" data-isint="true" data-ngmodel="SelectedAssignCategories" data-model="SelectedAssignCategories" data-controller="productController" ca-multiselect-treeview-autocomplete="Categories" name="AssignCategorieTree"
+                                class="input_width no-blink-cursor addcursor form-control">
+                            </div>
+                            <i class="fa fa-gears form-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="categories-list-new">
+                            <div class="list-button" ng-repeat="CategorieName in SelectedAssignCategorieName" ng-click="RemoveAssignCategorie(CategorieName.Id)">{{CategorieName.Name}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="form-sub-title">
+            <span>Tag Divisions</span>
+        </div>   </div>  
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="global-form-group">
+                        <select class="form-control" multiple="multiple" multiselect-dropdown="Divisions" data-ng-model="SelectedDivisions" data-ng-options="i.DivisionId as i.Name for i in Divisions" id="Division" name="Division" defaultname="Division">
+                            <option value="" ng-if="false"></option>
+                        </select>
+                        <i class="fa fa-gears form-icon"></i>
+                    </div>
+                    @*<div class="form-button">
+                    <div class="form-button-label">Tag Division</div>
+                    <a data-toggle="modal" data-target="#assign-division" class="btn btn-blue btn-block btn-md">Assign Division
+                    </a>
+                </div>*@
+                </div>
+
+
+            </div>
+            <div class="global-form-group">
+                <textarea class="form-control" ng-model="Product.Description" placeholder="Description"></textarea>
+                <i class="fa fa-align-left form-icon"></i>
+            </div>
+        </div>
+         </form>  
+        <div class="form-sub-title">
+            <span>Pricing</span>
+        </div>
+        <form name="formProductPricing">
+            <div class="main-form">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                        <div class="global-form-group">
+                            <input type="text" class="form-control" ng-model="ProductPricing.Quantity" name="Quantity" required-error-message="Required" validator="required" placeholder="Quantity">
+                            <i class="fa fa-list-ol form-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                        <div class="global-form-group">
+                            <input type="text" class="form-control" ng-model="ProductPricing.Price" name="Price" required-error-message="Required" validator="required" placeholder="Price">
+                            <i class="fa fa-usd form-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <button href="javascript:void(0)" validation-submit="formProductPricing" ng-click="insertPricing(ProductPricing)" class="btn btn-blue btn-block btn-md btn-form spacer-bottom-15">Insert
+                        </button>
+                        <button type="submit" validation-reset="formProductPricing" class="display-none" id="btnProductPricing" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div ng-repeat="pricing in Product.ProductPrices |filter:{IsDeleted:false}" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="white-box pricing-box">
+                            <div class="white-box-detail">
+                                <div class="left-navigation">
+                                    <div class="white-sub-box">
+                                        <div class="address-icon">
+                                            <i class="fa fa-list-ol"></i>
+                                        </div>
+                                        <div class="white-box-label address-label">Quantity</div>
+                                        <div class="white-box-data address-data">{{pricing.Quantity}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="white-box-detail">
+                                <div class="left-navigation">
+                                    <div class="white-sub-box">
+                                        <div class="address-icon">
+                                            <i class="fa fa-usd"></i>
+                                        </div>
+                                        <div class="white-box-label address-label">Price</div>
+                                        <div class="white-box-data address-data">{{pricing.Price}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delete-icon">
+                                <a data-toggle="tooltip" href="javascript:void(0)" ng-click="deletePricing(pricing,$index)" title="Delete" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                                @*<i class="fa fa-trash"></i>*@
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+        @*<div class="form-sub-title">
+						<span>Media</span>
+					</div>
+					
+					<div class="main-form">
+						<div class="fileupload fileupload-new text-left" data-provides="fileupload">
+							<input type="hidden"><input type="hidden">
+							<span class="btn btn-blue btn-form btn-md btn-file">
+								<span class="fileupload-new">Select files</span>
+								<span class="fileupload-exists">Change</span>
+								<input type="file">
+							</span>
+							<span class="fileupload-preview"></span>
+							<a href="#" class="close-upload fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+						</div>
+						
+						<div class="upload-images">
+							<img src="images/products/product-sample-1.jpg">
+							<i class="fa fa-close delete-image"></i>
+						</div>
+						<div class="upload-images">
+							<img src="images/products/product-sample-2.jpg">
+							<i class="fa fa-close delete-image"></i>
+						</div>
+					</div>*@
+
+        <div class="form-sub-title">
+            <span>Availabilities</span>
+        </div>
+        <form name="formAvailability">
+            <div class="main-form">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class="global-form-group">
+                            <select ng-model="ProductAvailabity" ng-options="item as item.Name for item in Availabilities" name="Availability" required-error-message="Required" validator="required" class="form-control" id="select-2">
+                                <option value="">Availability</option>
+                            </select>
+                            <i class="fa fa-clock-o form-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <a href="javascript:void(0)" validation-submit="formAvailability" ng-click="insertAvailability(ProductAvailabity)" class="btn btn-blue btn-block btn-md btn-form spacer-bottom-15">Insert
+                        </a>
+                        <button type="submit" validation-reset="formAvailability" class="display-none" id="btnProductAvailability" />
+                    </div>
+                </div>
+                <div class="theme-list-group">
+                    <div ng-repeat="item in Product.ProductAvailabilities |filter:{IsDeleted:false}" class="theme-list">
+                        {{item.Name}}
+								<div class="theme-list-action">
+                                    <a href="javascript:void(0)"  ng-click="deleteAvailability(item,$index)" class="fa fa-close"></a>
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+
+        <div class="form-sub-title">
+            <span>Attributes</span>
+        </div>
+        <span ng-if="CategoryAttributes.length==0 || CategoryAttributes==undefined ">
+            <b>No  Attributes found</b><br><br>
+        </span>
+        <div ng-repeat="parentAttribute in CategoryAttributes | unique: 'FeatureTypeId'" class="main-form">
+            <div class="form-button">
+                <div class="form-button-label">{{parentAttribute.FeatureTypeName}}</div>
+            </div>
+            <div class="row">
+                <div ng-repeat="childAttribute in CategoryAttributes| filter:{FeatureTypeId:parentAttribute.FeatureTypeId}" class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <div class="checkbox-theme checkbox-color spacer-bottom-10">
+
+                        <input id="category{{childAttribute.FeatureName}}{{$parent.$index}}{{$index}}" name="category_{{childAttribute.FeatureName}}" ng-model="childAttribute.checked" class="styled" type="checkbox">
+                        <label for="category{{childAttribute.FeatureName}}{{$parent.$index}}{{$index}}">{{childAttribute.FeatureName}}</label>
+                    </div>
+                </div>
+
+            </div>
+            <input value="{{IsRepeat=attribute.FeatureName}}" type="hidden" />
+
+            @*<div class="form-button">
+							<div class="form-button-label">Adidas</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+								<div class="checkbox-theme checkbox-color spacer-bottom-10">
+									<input id="item2-1" class="styled" type="checkbox">
+									<label for="item2-1">T-Shirt</label>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+								<div class="checkbox-theme checkbox-color spacer-bottom-10">
+									<input id="item2-2" class="styled" type="checkbox">
+									<label for="item2-2">Shoes</label>
+								</div>
+							</div>
+						</div>*@
+        </div>
+
+
+
+
+        <div class="form-sub-title">
+            <span>Tag Account Prices</span>
+        </div>
+        <form name="formAccountPrice">
+            <div class="main-form">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="global-form-group">
+                            <select ng-model="ProductAccountPrice.Account" ng-options="item as item.BusinessName for item in Accounts" class="form-control" name="Account" required-error-message="Required" validator="required">
+                                <option value="">Select Accounts</option>
+
+                            </select>
+                            <i class="fa fa-users form-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                        <div class="global-form-group">
+                            <input type="text" class="form-control" ng-model="ProductAccountPrice.Quantity" placeholder="Quantity" name="Quantity" required-error-message="Required" validator="required">
+                            <i class="fa fa-list-ol form-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                        <div class="global-form-group">
+                            <input type="text" class="form-control" ng-model="ProductAccountPrice.Price" placeholder="Price" name="Price" required-error-message="Required" validator="required">
+                            <i class="fa fa-usd form-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <a href="javascript:void(0)" validation-submit="formAccountPrice" ng-click="insertAccountPrice(ProductAccountPrice)" class="btn btn-blue btn-block btn-md btn-form spacer-bottom-15">Insert
+                        </a>
+                        <button type="submit" validation-reset="formAccountPrice" class="display-none" id="btnAccountPrice" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div ng-repeat="item in Product.ProductAccountPrices |filter:{IsDeleted:false}" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="white-box yellow">
+                            <div class="white-box-title">
+                                {{item.Account.BusinessName}}
+                            </div>
+                            <div class="tag-account-price-detail">
+                                <div class="white-box-detail">
+                                    <div class="left-navigation">
+                                        <div class="white-sub-box">
+                                            <div class="address-icon">
+                                                <i class="fa fa-list-ol"></i>
+                                            </div>
+                                            <div class="white-box-label address-label">Quantity</div>
+                                            <div class="white-box-data address-data">{{item.Quantity}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="white-box-detail">
+                                    <div class="left-navigation">
+                                        <div class="white-sub-box">
+                                            <div class="address-icon">
+                                                <i class="fa fa-usd"></i>
+                                            </div>
+                                            <div class="white-box-label address-label">Price</div>
+                                            <div class="white-box-data address-data">{{item.Price}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="delete-icon">
+                                    <a data-toggle="tooltip" href="javascript:void(0)" ng-click="deleteAccountPrice(item,$index)" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </form>
+
+
+       
+
+
+
+        <div class="main-form">
+            <div class="pull-left">
+                <button validation-submit="formProduct" ng-click="addEditProduct(Product,$event)" data-style="expand-right" data-size="s" class="btn btn-green ladda-button btn-md">
+                    Save
+                </button>
+                <a href="javascript:void(0)" ng-click="cancelProduct()" class="btn btn-gray btn-md">Cancel
+                </a>
+            </div>
+        </div>
+
+</div>
